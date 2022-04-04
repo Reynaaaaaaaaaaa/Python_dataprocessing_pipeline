@@ -11,9 +11,8 @@ configfile: "config/config.yaml"
 include: "rules/getData.smk"
 include: "rules/processBam.smk"
 include: "rules/processFasta.smk"
+include: "rules/collectVariants.smk"
 
 ### target rules ###
 rule all:
-    input:
-        "data/fasta/mm10.fa"
-
+    input: "data/fasta/mm10.fa.fai"
