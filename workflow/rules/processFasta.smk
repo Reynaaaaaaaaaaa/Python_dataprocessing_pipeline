@@ -27,9 +27,8 @@ rule make_fata:
 
 rule index_fasta:
     """
-    TODO:
-    # in: mm10.fa
-    # out: mm10.fa i / mm10.fa.fai
+        This rule will run on the fasta genome and index it, it will generate a overview-like file which is 
+        fully indexed
     """
     input: "data/fasta/mm10.fa"
 

@@ -15,4 +15,4 @@ include: "rules/collectVariants.smk"
 
 ### target rules ###
 rule all:
-    input: "data/fasta/mm10.fa.fai"
+    input: "data/variants/KO2.vcf"
