@@ -6,19 +6,39 @@
         "VCFfilter: We suggest -f "QUAL > 30 " (Depth over 10 reads), "DP > 10" (minimum Phred-scaled probability of error over 30)"
 
     So that is what this script will do
+
+    note: this is a freebayes tool so in order to run this tool, run it in a conda virtual env with python 2.7
 """
 
 rule filter_quality:
     """
         This rule will perform a filter of the freebayes .vcf data and will trim everything lower than 30
     """
-    input: ""
-    output: ""
+    input: "data/variant/{sample}.vcf"
+
+    output: "data/variant_filter/{sample}.vcf"
+
+    conda: "../../freebayes.yaml"
+
+    message: "Filtering quality with > 30"
+
+    log: "rule5/quality/{sample}.vcf.log"
+
+    shell: "vcffilter -f 'QUAL > 30' {input} > {output} 2> {log}"
 
 
 rule filter_depth:
     """
         rule will filter everything with a phred score lower than 10 
     """
-    input: ""
-    output: ""
+    input: "data/variant_filter/{sample}.vcf"
+
+    output: "data/variant_clean/{sample}.vcf"
+
+    conda: "../../freebayes.yaml"
+
+    message: "Filtering depth with DP > 10"
+
+    log: "rule5/depth/{sample}.vcf.log"
+
+    shell: "vcffilter -f 'DP > 10' {input} > {output} 2> {log}"
