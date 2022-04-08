@@ -1,7 +1,13 @@
 """
     Main control of the pipeline
 
-    getData -> processBam -> processFasta
+    All the samples go through a path and the mm10 is handled in process fasta
+      user downloads bam -> processBam -> collect variants -> filter vcf -> gather primitives -> preprocess intersection
+              getData -> processFasta -^
+
+                              -> KO merged           -v
+    preprocess intersection -|                         intersect vcf -> plot result
+                              -> primitive wild type -^
 
 """
 
@@ -14,8 +20,10 @@ include: "rules/processFasta.smk"
 include: "rules/collectVariants.smk"
 include: "rules/filterVcf.smk"
 include: "rules/gatherPrimitives.smk"
+include: "rules/preprocessIntersection.smk"
 include: "rules/intersectVcf.smk"
+include: "rules/plotResult.smk"
 
 ### target rules ###
 rule all:
-    input: "data/zips/KO3.vcf.gz"
+    input: "result/out.pdf"
