@@ -12,7 +12,9 @@ include: "rules/getData.smk"
 include: "rules/processBam.smk"
 include: "rules/processFasta.smk"
 include: "rules/collectVariants.smk"
+include: "rules/filterVcf.smk"
+include: "rules/gatherPrimitives.smk"
 
 ### target rules ###
 rule all:
-    input: "data/variants/KO2.vcf"
+    input: "data/primitives/KO1.vcf"

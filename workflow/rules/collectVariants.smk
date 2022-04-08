@@ -29,7 +29,7 @@ rule call_variant:
 
     output: "data/variants/{sample}.vcf"
 
-    conda: "../../freebayes.yaml"
+    conda: config["freebayes"]
 
     log: "logs/rule4/variant/{sample}.vcf.log"
 

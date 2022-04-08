@@ -19,7 +19,7 @@ rule make_fata:
 
     output: "data/fasta/mm10.fa"
 
-    log: "logs/rule2/makeFasta/mm10.fa.log"
+    log: "logs/rule3/makeFasta/mm10.fa.log"
 
     message: "Converting mm10 to fasta type"
 
@@ -34,7 +34,7 @@ rule index_fasta:
 
     output: "data/fasta/mm10.fa.fai"
 
-    log: "logs/rule2/indexFasta/mm10.fa.fai.log"
+    log: "logs/rule3/indexFasta/mm10.fa.fai.log"
 
     message: "Indexing fasta to data/fasta/"
 

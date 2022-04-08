@@ -1,5 +1,7 @@
 data_url: "http://hgdownload.cse.ucsc.edu/goldenpath/mm10/bigZips/mm10.2bit"
 
+freebayes: "../../config/freebayes.yaml"
+
 samples:
     KO1: KO1
     KO2: KO2

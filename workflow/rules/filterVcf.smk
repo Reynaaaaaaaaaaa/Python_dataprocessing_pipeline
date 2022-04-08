@@ -14,15 +14,15 @@ rule filter_quality:
     """
         This rule will perform a filter of the freebayes .vcf data and will trim everything lower than 30
     """
-    input: "data/variant/{sample}.vcf"
+    input: "data/variants/{sample}.vcf"
 
-    output: "data/variant_filter/{sample}.vcf"
+    output: "data/variants_filtered/{sample}.vcf"
 
-    conda: "../../freebayes.yaml"
+    conda: config["freebayes"]
 
-    message: "Filtering quality with > 30"
+    message: "Filtering quality with QUAL > 30"
 
-    log: "rule5/quality/{sample}.vcf.log"
+    log: "logs/rule5/quality/{sample}.vcf.log"
 
     shell: "vcffilter -f 'QUAL > 30' {input} > {output} 2> {log}"
 
@@ -31,14 +31,14 @@ rule filter_depth:
     """
         rule will filter everything with a phred score lower than 10 
     """
-    input: "data/variant_filter/{sample}.vcf"
+    input: "data/variants_filtered/{sample}.vcf"
 
-    output: "data/variant_clean/{sample}.vcf"
+    output: "data/variants_clean/{sample}.vcf"
 
-    conda: "../../freebayes.yaml"
+    conda: config["freebayes"]
 
     message: "Filtering depth with DP > 10"
 
-    log: "rule5/depth/{sample}.vcf.log"
+    log: "logs/rule5/depth/{sample}.vcf.log"
 
     shell: "vcffilter -f 'DP > 10' {input} > {output} 2> {log}"
