@@ -7,3 +7,7 @@ samples:
     KO2: KO2
     KO3: KO3
     WT: WT
+
+intersection:
+    KO: KO_intersection
+    WT: WT_intersection

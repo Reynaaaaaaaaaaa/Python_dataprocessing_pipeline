@@ -14,7 +14,8 @@ include: "rules/processFasta.smk"
 include: "rules/collectVariants.smk"
 include: "rules/filterVcf.smk"
 include: "rules/gatherPrimitives.smk"
+include: "rules/intersectVcf.smk"
 
 ### target rules ###
 rule all:
-    input: "data/primitives/KO1.vcf"
+    input: "data/zips/KO3.vcf.gz"

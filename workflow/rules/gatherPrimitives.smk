@@ -18,6 +18,8 @@ rule gather_primitives:
 
     conda: config["freebayes"]
 
+    message: "Gathering primitives from samples"
+
     log: "logs/rule6/primitives/{sample}.vcf.log"
 
     shell: "vcfallelicprimitives -g {input} > {output} 2> {log}"
