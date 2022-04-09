@@ -21,9 +21,9 @@ include: "rules/collectVariants.smk"
 include: "rules/filterVcf.smk"
 include: "rules/gatherPrimitives.smk"
 include: "rules/preprocessIntersection.smk"
-include: "rules/intersectVcf.smk"
+include: "rules/makeIntersection.smk"
 include: "rules/plotResult.smk"
 
 ### target rules ###
 rule all:
-    input: "result/out.pdf"
+    input: "out.pdf"

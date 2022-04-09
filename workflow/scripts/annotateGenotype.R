@@ -5,16 +5,23 @@ library(gridExtra)
 library(grid)
 library(dplyr)
 
-WT<-read.table("WT_variants", skip="##", fill = TRUE, row.names=NULL)
+# Getting the comandline arguments
+args = commandArgs(trailingOnly = TRUE)
+
+# Reading in the WT file
+WT<-read.table(args[1], skip="##", fill = TRUE, row.names=NULL)
 WT<-subset(WT, select = c(1, 2))
 WT<-plyr::rename(WT, c("row.names"="V1", "chr1"="V2"))
 head(WT)
 dim(WT)
-KO<-read.table("KO_variants", skip="##", fill = TRUE, row.names=NULL)
+
+# Reading in the KO file
+KO<-read.table(args[2], skip="##", fill = TRUE, row.names=NULL)
 KO<-subset(KO, select = c(1, 2))
 KO<-plyr::rename(KO, c("row.names"="V1", "chr1"="V2"))
 head(KO)
 dim(KO)
+
 ########## subsetting chromosomes ###############
 
 WT_chr1<-subset(WT, V1 == "chr1")
@@ -71,6 +78,7 @@ WT_chr6<-subset(WT_chr6, select = c(2))
 WT_chr7<-subset(WT_chr7, select = c(2))
 WT_chr8<-subset(WT_chr8, select = c(2))
 WT_chr9<-subset(WT_chr9, select = c(2))
+
 WT_chr10<-subset(WT_chr10, select = c(2))
 WT_chr11<-subset(WT_chr11, select = c(2))
 WT_chr12<-subset(WT_chr12, select = c(2))
@@ -92,6 +100,7 @@ KO_chr6<-subset(KO_chr6, select = c(2))
 KO_chr7<-subset(KO_chr7, select = c(2))
 KO_chr8<-subset(KO_chr8, select = c(2))
 KO_chr9<-subset(KO_chr9, select = c(2))
+
 KO_chr10<-subset(KO_chr10, select = c(2))
 KO_chr11<-subset(KO_chr11, select = c(2))
 KO_chr12<-subset(KO_chr12, select = c(2))
@@ -286,7 +295,7 @@ grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, 
 dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
 
 g <- grid_arrange_shared_legend(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, pX, ncol = 3, nrow=7)
-ggsave("graph.pdf", g, width=36, height=50, units="cm")
+ggsave("../visualisation.pdf", g, width=36, height=50, units="cm")
 
 ### statistical tests ###
 

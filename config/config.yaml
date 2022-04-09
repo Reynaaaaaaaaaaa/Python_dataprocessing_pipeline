@@ -2,12 +2,10 @@ data_url: "http://hgdownload.cse.ucsc.edu/goldenpath/mm10/bigZips/mm10.2bit"
 
 freebayes: "../../config/freebayes.yaml"
 
+R_script: "workflow/scripts/annotateGenotype.R"
+
 samples:
     KO1: KO1
     KO2: KO2
     KO3: KO3
     WT: WT
-
-intersection:
-    KO: KO_intersection
-    WT: WT_intersection
