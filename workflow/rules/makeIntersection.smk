@@ -28,6 +28,8 @@ rule create_sequence_dictionary:
 
     log: "logs/rule8/seq_dict/reference.dict.log"
 
+    benchmark: "benchmarks/rule8/seq_dict/reference.dict.txt"
+
     shell: "java -jar picard.jar CreateSequenceDictionary R={input} O={output} 2> {log}"
 
 
@@ -43,9 +45,11 @@ rule merge_KO:
 
     output: "data/intersection/merged_KO.vcf.gz"
 
+    message: "Merging knock out samples"
+
     log: "logs/rule8/merge/merged_KO.vcf.log"
 
-    message: "Merging knock out samples"
+    benchmark: "benchmarks/rule8/merge/merged_KO.vcf.txt"
 
     shell: "java -jar picard.jar MergeVcfs I={input.KO1} I={input.KO2} I={input.KO3} D={input.ref} O={output} 2> {log}"
 

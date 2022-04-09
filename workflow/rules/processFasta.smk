@@ -21,6 +21,8 @@ rule make_fata:
 
     log: "logs/rule3/makeFasta/mm10.fa.log"
 
+    benchmark: "benchmarks/rule3/mm10.fa.txt"
+
     message: "Converting mm10 to fasta type"
 
     shell: "twoBitToFa {input} {output} >{log} 2>&1"
@@ -35,6 +37,8 @@ rule index_fasta:
     output: "data/fasta/mm10.fa.fai"
 
     log: "logs/rule3/indexFasta/mm10.fa.fai.log"
+
+    benchmark: "benchmarks/rule3/mm10.fa.fai.txt"
 
     message: "Indexing fasta to data/fasta/"
 

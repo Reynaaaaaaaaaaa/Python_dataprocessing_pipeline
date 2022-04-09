@@ -2,8 +2,8 @@
     Main control of the pipeline
 
     All the samples go through a path and the mm10 is handled in process fasta
-      user downloads bam -> processBam -> collect variants -> filter vcf -> gather primitives -> preprocess intersection
-              getData -> processFasta -^
+      <user downloads bam> -> processBam -> collect variants -> filter vcf -> gather primitives -> preprocess intersection
+                getData -> processFasta -^
 
                               -> KO merged           -v
     preprocess intersection -|                         intersect vcf -> plot result
@@ -26,4 +26,6 @@ include: "rules/plotResult.smk"
 
 ### target rules ###
 rule all:
-    input: "out.pdf"
+    input:
+        "results/Rplots.pdf",
+        "results/Summary.pdf"

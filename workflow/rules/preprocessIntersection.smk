@@ -17,4 +17,6 @@ rule zip_vcf:
 
     log: "logs/rule7/zip/{sample}.vcf.gz.log"
 
+    benchmark: "benchmarks/rule7/zip/{sample}.vcf.gz.txt"
+
     shell: "bgzip -ci {input} > {output} 2> {log}"

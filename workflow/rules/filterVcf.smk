@@ -24,6 +24,8 @@ rule filter_quality:
 
     log: "logs/rule5/quality/{sample}.vcf.log"
 
+    benchmark: "benchmarks/rule5/quality/{sample}.vcf.txt"
+
     shell: "vcffilter -f 'QUAL > 30' {input} > {output} 2> {log}"
 
 
@@ -40,5 +42,7 @@ rule filter_depth:
     message: "Filtering depth with DP > 10"
 
     log: "logs/rule5/depth/{sample}.vcf.log"
+
+    benchmark: "benchmarks/rule5/filter/{sample}.vcf.txt"
 
     shell: "vcffilter -f 'DP > 10' {input} > {output} 2> {log}"

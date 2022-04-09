@@ -16,6 +16,8 @@ rule download_mm10:
 
     log: "logs/rule0/download/gatherData.log"
 
+    benchmark: "benchmarks/rule0/download/gatherData.txt"
+
     message: "The missing data is downloading..."
 
     shell:

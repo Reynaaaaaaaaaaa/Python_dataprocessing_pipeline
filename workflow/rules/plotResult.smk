@@ -25,6 +25,8 @@ rule unzip_merge:
 
     log: "logs/rule9/unzip/merged_KO.vcf.log"
 
+    benchmark: "benchmarks/rule9/unzip/merged_KO.vcf.txt"
+
     shell: "gunzip -c {input} > {output} 2> {log}"
 
 
@@ -37,9 +39,11 @@ rule plot_result:
         KO = "data/intersection/merged_KO.vcf",
         WT = "data/primitives/WT.vcf"
 
-    output: "out.pdf"
+    output: "Rplots.pdf", "Summary.pdf"
 
     log: "logs/rule9/plot/out.pdf.log"
+
+    benchmark: "benchmarks/rule9/out.pdf.txt"
 
     message: "Generating final output"
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 library(DescTools)
 library(ggplot2)
 library(reshape2)
@@ -5,17 +7,15 @@ library(gridExtra)
 library(grid)
 library(dplyr)
 
-# Getting the comandline arguments
 args = commandArgs(trailingOnly = TRUE)
 
-# Reading in the WT file
 WT<-read.table(args[1], skip="##", fill = TRUE, row.names=NULL)
 WT<-subset(WT, select = c(1, 2))
 WT<-plyr::rename(WT, c("row.names"="V1", "chr1"="V2"))
 head(WT)
 dim(WT)
 
-# Reading in the KO file
+
 KO<-read.table(args[2], skip="##", fill = TRUE, row.names=NULL)
 KO<-subset(KO, select = c(1, 2))
 KO<-plyr::rename(KO, c("row.names"="V1", "chr1"="V2"))
@@ -295,7 +295,7 @@ grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, 
 dsamp <- diamonds[sample(nrow(diamonds), 1000), ]
 
 g <- grid_arrange_shared_legend(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, pX, ncol = 3, nrow=7)
-ggsave("../visualisation.pdf", g, width=36, height=50, units="cm")
+ggsave("../out.pdf", g, width=36, height=50, units="cm")
 
 ### statistical tests ###
 

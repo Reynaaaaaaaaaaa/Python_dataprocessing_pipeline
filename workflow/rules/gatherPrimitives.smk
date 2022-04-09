@@ -22,4 +22,6 @@ rule gather_primitives:
 
     log: "logs/rule6/primitives/{sample}.vcf.log"
 
+    benchmark: "bechmarks/rule6/primitives/{sample}.vcf.txt"
+
     shell: "vcfallelicprimitives -g {input} > {output} 2> {log}"

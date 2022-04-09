@@ -26,7 +26,9 @@ rule sort_bam:
 
     log: "logs/rule1/sort/{samples}.bam.log"
 
-    message: "Sorting bam files to data/sorted_bam/"
+    benchmark: "benchmarks/rule1/sort/{samples}.bam.txt"
+
+    message: "Sorting bam files"
 
     shell: "samtools sort {input} > {output} -@ 4 2> {log}"
 
@@ -41,6 +43,8 @@ rule index_bam:
 
     log: "logs/rule1/index/{samples}.bam.bai.log"
 
-    message: "Indexing sorted bam files to /data/indexed_bam/"
+    benchmark: "benchmarks/rule1/index/{samples}.bam.bai.txt"
+
+    message: "Indexing sorted bam files"
 
     shell: "samtools index {input} > {output} 2> {log}"

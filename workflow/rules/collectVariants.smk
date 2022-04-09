@@ -33,6 +33,8 @@ rule call_variant:
 
     log: "logs/rule4/variant/{sample}.vcf.log"
 
+    benchmark: "benchmarks/rule4/variant/{sample}.vcf.txt"
+
     message: "Collecting variants from .bam files with mm10 as reference"
 
     shell: "freebayes-parallel <(fasta_generate_regions.py {input.mm10fai} 100000) 36 -f {input.mm10fa} -b {input.sbam} > {output} 2> {log}"
