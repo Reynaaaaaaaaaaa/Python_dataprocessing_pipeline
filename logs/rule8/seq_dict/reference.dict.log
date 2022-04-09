@@ -1,0 +1,18 @@
+INFO	2022-04-09 12:15:26	CreateSequenceDictionary	
+
+********** NOTE: Picard's command line syntax is changing.
+**********
+********** For more information, please see:
+********** https://github.com/broadinstitute/picard/wiki/Command-Line-Syntax-Transition-For-Users-(Pre-Transition)
+**********
+********** The command line looks like this in the new syntax:
+**********
+**********    CreateSequenceDictionary -R data/fasta/mm10.fa -O data/intersection/reference.dict
+**********
+
+
+12:15:27.261 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/homes/rfvisser/snakemake-test/Snakemake_eindopdracht/Dataprocessing/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Sat Apr 09 12:15:27 CEST 2022] CreateSequenceDictionary OUTPUT=data/intersection/reference.dict REFERENCE=data/fasta/mm10.fa    TRUNCATE_NAMES_AT_WHITESPACE=true NUM_SEQUENCES=2147483647 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Sat Apr 09 12:15:27 CEST 2022] Executing as rfvisser@bin100.bin.bioinf.nl on Linux 5.10.0-8-amd64 amd64; OpenJDK 64-Bit Server VM 17.0.2+8-Debian-1deb11u1; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.27.1
+[Sat Apr 09 12:15:35 CEST 2022] picard.sam.CreateSequenceDictionary done. Elapsed time: 0,14 minutes.
+Runtime.totalMemory()=570425344

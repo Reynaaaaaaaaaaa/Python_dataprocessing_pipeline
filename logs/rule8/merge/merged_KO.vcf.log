@@ -1,0 +1,19 @@
+INFO	2022-04-09 12:15:35	MergeVcfs	
+
+********** NOTE: Picard's command line syntax is changing.
+**********
+********** For more information, please see:
+********** https://github.com/broadinstitute/picard/wiki/Command-Line-Syntax-Transition-For-Users-(Pre-Transition)
+**********
+********** The command line looks like this in the new syntax:
+**********
+**********    MergeVcfs -I data/primitives/KO1.vcf.gz -I data/primitives/KO2.vcf.gz -I data/primitives/KO3.vcf.gz -D data/intersection/reference.dict -O data/intersection/merged_KO.vcf.gz
+**********
+
+
+12:15:36.019 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/homes/rfvisser/snakemake-test/Snakemake_eindopdracht/Dataprocessing/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Sat Apr 09 12:15:36 CEST 2022] MergeVcfs INPUT=[data/primitives/KO1.vcf.gz, data/primitives/KO2.vcf.gz, data/primitives/KO3.vcf.gz] OUTPUT=data/intersection/merged_KO.vcf.gz SEQUENCE_DICTIONARY=data/intersection/reference.dict    VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=true CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Sat Apr 09 12:15:36 CEST 2022] Executing as rfvisser@bin100.bin.bioinf.nl on Linux 5.10.0-8-amd64 amd64; OpenJDK 64-Bit Server VM 17.0.2+8-Debian-1deb11u1; Deflater: Intel; Inflater: Intel; Provider GCS is not available; Picard version: 2.27.1
+INFO	2022-04-09 12:15:36	MergeVcfs	Processed        10.000 records.  Elapsed time: 00:00:00s.  Time for last 10.000:    0s.  Last read position: chr14:69.776.162
+[Sat Apr 09 12:15:37 CEST 2022] picard.vcf.MergeVcfs done. Elapsed time: 0,02 minutes.
+Runtime.totalMemory()=262144000
