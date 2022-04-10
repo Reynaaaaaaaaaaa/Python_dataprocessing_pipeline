@@ -66,8 +66,7 @@ The data ran through the pipeline can be found on a Galaxy server. Unfortunately
 
 ## Output
 The output of the pipeline will be an annotated chromosome map of the total variation in the knock-out samples compared to the wild type.
-
-![](results/out.pdf)
+[Final result](results/out.pdf)
 
 ## Support
 For questions or support you can send me an [email](mailto:r.f.visser@st.hanze.nl)
