@@ -37,26 +37,51 @@ Visualization tools:
 Now that everything is downloaded, the next step is to create a conda environment, this will be done from scratch in these steps:
 
 *Activate miniconda3*
+
+
 Starting conda source and accessing additional functionality
+
+
 `source miniconda3/bin/activate`
+
+
 You will now see "(base)" before your terminal
 
 *Make virtual environment*
+
+
 Create your own environment for the requirements 
+
+
 `conda create -n <name of choice> -c bioconda freebayes` 
+
+
 Note: The `-c bioconda freebayes` will activate the library and base the environment of Freebayes. This is necessary for the tool to work.
 
 *Activate new environment*
+
+
 If you don't see your environment name instead of base, run this command
+
+
 `conda activate <name of environment>`
+
+
 You will now see your environment name instead of base and the virtual environment is now active
 
+
 *Export freebayes.yaml*
+
+
 The pipeline needs the tool, this file will have the configuration in it. A template is added to the repo if something went wrong
+
+
 `conda env export > config/freebayes.yaml`
 
 
 You can now run the entire repo with
+
+
 `snakemake -s workflow/Snakefile.smk --use-conda`
 
 ## Downloading bam data
@@ -71,6 +96,6 @@ The output of the pipeline will be an annotated chromosome map of the total vari
 ## Support
 For questions or support you can send me an [email](mailto:r.f.visser@st.hanze.nl)
 
-Credits:
-- My teacher F. Feenstra and her Snakemake [tutorials](https://fennaf.gitbook.io/bfvh4dsp1/) 
+## Credits:
+My teacher F. Feenstra and her Snakemake [tutorials](https://fennaf.gitbook.io/bfvh4dsp1/) 
 
