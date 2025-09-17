@@ -1,5 +1,5 @@
 # Dataprocessing
-Authors: Reindert1 
+Authors: Reyna 
 Date: 14/10/2022  
 
 This repo contains the final assignment of the course "Dataprocessing". The complete pipeline of an existing article has been redone, the original article can be found [here](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5504-9), the matching GitHub repo can be found [here](https://github.com/cfarkas/Genotype-variants). 
@@ -98,4 +98,5 @@ For questions or support you can send me an [email](mailto:r.f.visser@st.hanze.n
 
 ## Credits:
 My teacher F. Feenstra and her Snakemake [tutorials](https://fennaf.gitbook.io/bfvh4dsp1/) 
+
 
