@@ -1,0 +1,4 @@
+# Add these options to your config.yaml to control threads, memory, and cleanup
+threads: 4
+mem_mb: 4000
+cleanup_intermediates: true
